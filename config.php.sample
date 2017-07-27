@@ -1,0 +1,13 @@
+<?php
+// config.php.sample
+$config = [
+  'settings' => [
+    'displayErrorDetails' => true,
+    'db' => [
+      'hostname' => 'localhost',
+      'username' => 'user',
+      'password' => 'pass',
+      'name' => 'db',
+    ]
+  ]
+];
