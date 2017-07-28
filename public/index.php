@@ -11,9 +11,9 @@ require '../config.php';
 if ($services = getenv("VCAP_SERVICES")) {
   $services_json = json_decode($services, true);
   $config['settings']['db']['hostname'] = $services_json['cleardb'][0]['credentials']['hostname'];
-  $app->config['settings']['db']['username'] = $services_json['cleardb'][0]['credentials']['username'];
-  $app->config['settings']['db']['password'] = $services_json['cleardb'][0]['credentials']['password'];
-  $app->config['settings']['db']['name'] = $services_json['cleardb'][0]['credentials']['name'];
+  $config['settings']['db']['username'] = $services_json['cleardb'][0]['credentials']['username'];
+  $config['settings']['db']['password'] = $services_json['cleardb'][0]['credentials']['password'];
+  $config['settings']['db']['name'] = $services_json['cleardb'][0]['credentials']['name'];
 } 
 
 // configure Slim application instance
@@ -69,6 +69,7 @@ $app->get('/delete/{id}', function (Request $request, Response $response, $args)
 })->setName('delete');
 
 // database reset
+// only for development, remove from production code
 $app->get('/reset-db', function (Request $request, Response $response) {
   if (!$this->db->query("DROP TABLE IF EXISTS cities")) {
     throw new Exception('Failed to drop table: ' . $this->db->error);
@@ -77,6 +78,12 @@ $app->get('/reset-db', function (Request $request, Response $response) {
     throw new Exception('Failed to create table: ' . $this->db->error);  
   }
   return $response->write('Database successfully reset!');
+});
+
+// PHP runtime info
+// only for debugging, remove from production code
+$app->get('/info', function (Request $request, Response $response) {
+  phpinfo();
 });
 
 $app->run();

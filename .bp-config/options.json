@@ -1,0 +1,6 @@
+{
+  "WEB_SERVER": "httpd",
+  "COMPOSER_VENDOR_DIR": "vendor",
+  "WEBDIR": "public",
+  "PHP_VERSION": "{PHP_71_LATEST}"
+}

@@ -2,7 +2,7 @@
 // config.php.sample
 $config = [
   'settings' => [
-    'displayErrorDetails' => true,
+    'displayErrorDetails' => true,  // remove in production environment
     'db' => [
       'hostname' => 'localhost',
       'username' => 'user',
