@@ -6,8 +6,8 @@ To deploy this application to your local development host (for example, `localho
  * Clone the repository to the Web server document root on your local development host.
  * Run `composer update` to install all dependencies.
  * Create `config.php` with credentials for the local MySQL service. Use `config.php.sample` as an example.
- * Browse to `http://localhost/public/index.php` to access the application.
  * Browse to `http://localhost/public/index.php/reset-db` to initialize the database tables.
+ * Browse to `http://localhost/public/index.php` to access the application.
  
 To deploy this application to your Bluemix space:
 
