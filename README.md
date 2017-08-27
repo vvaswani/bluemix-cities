@@ -11,7 +11,6 @@ To deploy this application to your local development host (for example, `localho
 To deploy this application to your Bluemix space:
 
  * Clone the repository to your local system.
- * Run `composer update` to install all dependencies.
  * Create `config.php` with credentials for the various services. Use `config.php.sample` as an example.
  * Update `manifest.yml` with your custom hostname.
  * Push the application to Bluemix with `cf push`.
