@@ -1,12 +1,12 @@
 This example application is built with PHP, Slim and Bootstrap. It requires a local or hosted MySQL service. 
 
-To deploy this application to your local development environment:
+To deploy this application to your local development host (for example, `localhost`):
 
  * Create an empty database in your local MySQL database.
- * Clone the repository to your local system.
+ * Clone the repository to the Web server document root on your local development host.
  * Run `composer update` to install all dependencies.
- * Create `config.php` with credentials for the MySQL service. Use `config.php.sample` as an example.
- * Browse to `http://[host]/[path]/index.php`.
+ * Create `config.php` with credentials for the local MySQL service. Use `config.php.sample` as an example.
+ * Browse to `http://localhost/[path]/public/index.php`.
  
 To deploy this application to your Bluemix space:
 
