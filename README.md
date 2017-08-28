@@ -14,7 +14,6 @@ To deploy this application to your Bluemix space:
  * Instantiate a ClearDB MySQL service using the Bluemix console. 
  * Create an empty database in your ClearDB service.
  * Clone the repository to your local system.
- * Create `config.php` using `config.php.sample` as an example.
  * Create `manifest.yml` and update it to use a custom hostname. Use `manifest.yml.sample` as an example.
  * Push the application to Bluemix with `cf push`.
  * Bind the ClearDB service to your application with `cf bind-service`.
