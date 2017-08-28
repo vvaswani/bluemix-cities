@@ -4,17 +4,19 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 // autoload files
 require '../vendor/autoload.php';
-require '../config.php';
 
 // if BlueMix VCAP_SERVICES environment available
 // overwrite local credentials with BlueMix credentials
 if ($services = getenv("VCAP_SERVICES")) {
+  $config = [];
   $services_json = json_decode($services, true);
   $config['settings']['db']['hostname'] = $services_json['cleardb'][0]['credentials']['hostname'];
   $config['settings']['db']['username'] = $services_json['cleardb'][0]['credentials']['username'];
   $config['settings']['db']['password'] = $services_json['cleardb'][0]['credentials']['password'];
   $config['settings']['db']['name'] = $services_json['cleardb'][0]['credentials']['name'];
-} 
+} else {
+  require '../config.php';
+}
 
 // configure Slim application instance
 // initialize application
